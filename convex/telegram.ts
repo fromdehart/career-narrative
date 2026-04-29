@@ -1,9 +1,6 @@
 import { action, internalMutation } from "./_generated/server";
-import { internal } from "./_generated/api";
 import { v } from "convex/values";
 import * as telegramClient from "./telegramClient";
-
-const TELEGRAM_CHALLENGE_ID = "telegram";
 
 function getToken(): string | undefined {
   return process.env.TELEGRAM_BOT_TOKEN;
@@ -50,18 +47,7 @@ export const storeIncoming = internalMutation({
     text: v.optional(v.string()),
     updateId: v.number(),
   },
-  handler: async (ctx, args) => {
-    await ctx.db.insert("events", {
-      challengeId: TELEGRAM_CHALLENGE_ID,
-      sessionId: args.chatId,
-      eventName: "telegram_incoming",
-      metadata: {
-        chatId: args.chatId,
-        from: args.from,
-        text: args.text,
-        updateId: args.updateId,
-      },
-      timestamp: Date.now(),
-    });
+  handler: async (_ctx, _args) => {
+    // Telegram webhook logging disabled — events table removed
   },
 });

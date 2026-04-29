@@ -1,4 +1,4 @@
-import { action, internalMutation, mutation, query } from "./_generated/server";
+import { action, internalMutation, internalQuery, mutation, query } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
 
@@ -30,12 +30,12 @@ export const createReference = mutation({
 export const sendInvite = action({
   args: { referenceId: v.id("references") },
   handler: async (ctx, args) => {
-    const reference = await ctx.runQuery(internal.references.getByReferenceId, {
+    const reference = await ctx.runQuery(internal.references.getByReferenceIdInternal, {
       referenceId: args.referenceId,
     });
     if (!reference) return { success: false };
 
-    const profile = await ctx.runQuery(internal.profiles.getProfile, {
+    const profile = await ctx.runQuery(internal.profiles.getProfileInternal, {
       profileId: reference.profileId,
     });
 
@@ -54,6 +54,13 @@ export const sendInvite = action({
 });
 
 export const getByReferenceId = query({
+  args: { referenceId: v.id("references") },
+  handler: async (ctx, args) => {
+    return await ctx.db.get(args.referenceId);
+  },
+});
+
+export const getByReferenceIdInternal = internalQuery({
   args: { referenceId: v.id("references") },
   handler: async (ctx, args) => {
     return await ctx.db.get(args.referenceId);

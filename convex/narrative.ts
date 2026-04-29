@@ -117,7 +117,7 @@ export const generateReferenceSummary = action({
     const session = await ctx.runQuery(internal.interview.getSessionInternal, {
       sessionId: args.sessionId,
     });
-    const reference = await ctx.runQuery(internal.references.getByReferenceId, {
+    const reference = await ctx.runQuery(internal.references.getByReferenceIdInternal, {
       referenceId: args.referenceId,
     });
 
