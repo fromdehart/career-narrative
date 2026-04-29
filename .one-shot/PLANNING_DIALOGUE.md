@@ -236,3 +236,6 @@ no pretending everything is truth
 what’s public vs private
 ability to remove/edit
 
+
+## User Feedback (Wed Apr 29 12:58:07 PM EDT 2026)
+This is GOOD. I think that uploading the résumé that that’s like the first step for the job seeker like we have to do it that way it gives us a base to kind of build out their story and and from there again Taylor the questions I like the interview happening within the page You know, using open eyes, voice, blah, blah blah and then I think that we should also include the like references piece where I can send someone a link and then it’ll it’ll walk them through doing that like voice interview but just through the website so we don’t have to have like a separate like agent experiences. It’ll work the same way that the Individual interview works for the job seeker same as the reference send a link we can put some legal crap on the link that says you know, I agree that my reference can be used blah blah blah and also wanna make sure we build out a just like a logged out homepage that kind of explains the whole concept that’s part of the plan
